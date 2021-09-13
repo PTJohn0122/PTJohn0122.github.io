@@ -23,10 +23,5 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-theme-landscape": "^0.0.3"
-  },
-  "deploy": {
-    "type": "git",
-    "repo": "https://github.com/PTJohn0122/PTJohn0122.github.io",
-    "branch": "gh-pages"
   }
 }
