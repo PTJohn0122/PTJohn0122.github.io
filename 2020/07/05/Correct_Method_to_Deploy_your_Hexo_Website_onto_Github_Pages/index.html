@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-first-post"
+  id="post-Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -73,7 +73,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2020/07/05/first-post/" class="article-date">
+      <a href="/2020/07/05/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/" class="article-date">
   <time datetime="2020-07-05T05:51:06.000Z" itemprop="datePublished">2020-07-05</time>
 </a> 
   <div class="article-category">
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">198</span>
+            <span class="post-count">200</span>
         </span>
     </span>
 
@@ -110,15 +110,17 @@
   <p>After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Preparation: you website, your github repo, a solid internet connection</span><br></pre></td></tr></table></figure>
 
-<p>The hexo document website has a detailed instruction about what you should prepare, so I’ll leave the job to them. After your website is finished with all impelmentations you want, run the following command:</p>
+<p>The <a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo document website</a> has a detailed instruction about what you should prepare, so I’ll leave the job to them. After your website is finished with all impelmentations you want, run the following command:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
 
 <p>This plugin would generate the correct form for your deploy to Github Page. Then open _config.yml of your website and make the following edit:</p>
+<span id="more"></span>
+
 <figure class="highlight yml"><figcaption><span>snippet of _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://username.github.io/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;reponame&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>This would set up the link to your repo, so you don’t have to wake up Git(which makes a lot trouble if you use SSH connection on Windows).</p>
 <p>Then you are one step before deployment. Simply run: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>to generate the correct website and push them into your repo. Then your website should be available on <a target="_blank" rel="noopener" href="https://username.github.io/">https://username.github.io/</a>.</p>
  
@@ -169,7 +171,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://ptjohn0122.github.io/2020/07/05/first-post/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://ptjohn0122.github.io/2020/07/05/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,10 +335,6 @@
         <i class="ri-search-line"></i>
       </a>
       
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
       
     </li>
   </ul>
