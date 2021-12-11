@@ -11,10 +11,10 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Correct Method to Deploy your Hexo Website onto Github Pages |  H-Dimension Space</title>
+      <title>Correct Method to Deploy your Hexo Website onto Github Pages |  Studio H</title>
   <meta name="generator" content="hexo-theme-ayer">
       
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/Mountain_icon.png" />
        
 <link rel="stylesheet" href="/dist/main.css">
 
@@ -74,7 +74,7 @@
      
     <div class="article-meta">
       <a href="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/" class="article-date">
-  <time datetime="2020-07-05T05:51:06.000Z" itemprop="datePublished">2020-07-05</time>
+  <time datetime="2020-07-05T05:51:06.000Z" itemprop="datePublished">07-05-2020</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Coding/">Coding</a>
@@ -107,15 +107,17 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Preparation: you website, your github repo, a solid internet connection</span><br></pre></td></tr></table></figure>
+  <img src="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg" class="">
+
+<p>After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Prerequisites: you website, your github repo, a solid internet connection</span><br></pre></td></tr></table></figure>
 
 <p>The <a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo document website</a> has a detailed instruction about what you should prepare, so I’ll leave the job to them. After your website is finished with all impelmentations you want, run the following command:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
 
 <p>This plugin would generate the correct form for your deploy to Github Page. Then open _config.yml of your website and make the following edit:</p>
-<span id="more"></span>
-
 <figure class="highlight yml"><figcaption><span>snippet of _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://username.github.io/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;reponame&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>This would set up the link to your repo, so you don’t have to wake up Git(which makes a lot trouble if you use SSH connection on Windows).</p>
@@ -170,34 +172,70 @@
   </div>
 
    
-  
+  <nav class="article-nav">
+    
+      <a href="/02/22/2021/Snow-in-the-Hotest-State-of-America/" class="article-nav-link">
+        <strong class="article-nav-caption">Last Post</strong>
+        <div class="article-nav-title">
+          
+            Snow in the Hottest State of America
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
    
-<div class="gitalk" id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
-
-
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
-
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'b1d723472037aeb71111',
-    clientSecret: '45c376acbdfdff97242153d2d7e36901daca5aa0',
-    repo: '',
-    owner: 'PTJohn0122',
-    admin: ['PTJohn0122'],
-    // id: location.pathname,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname),
-    distractionFreeMode: false,  // Facebook-like distraction free mode
-    pagerDirection: 'last'
-  })
-
-  gitalk.render('gitalk-container')
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "rf1bxSvqqI0RJUwfxEkkjlxA-MdYXbMMI",
+    app_key: "8zydQo3ebxbu1Rn9NuD67ak1",
+    path: window.location.pathname,
+    avatar: "wavatar",
+    placeholder: "Leave your comment at here~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
 </script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
 
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
      
 </article>
 
@@ -258,7 +296,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="H-Dimension Space"></a>
+    <a href="/"><img src="/Mountain_icon.png" alt="Studio H"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -277,10 +315,6 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/tags">Tags</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/photography">Photos</a>
     </li>
     
     <li class="nav-item">
