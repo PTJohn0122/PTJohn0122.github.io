@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Algorithm Design Tips</title>
+    <link href="/03/23/2022/Algorithm-Design-Tips/"/>
+    <url>/03/23/2022/Algorithm-Design-Tips/</url>
+    
+    <content type="html"><![CDATA[<p>After complete my coursework in Algorithm design &amp; analysis during college, my first impression of a given algorithm question, like say Leetcode, has changed. Some tips I found helpful was not mentioned in the most classic textbook, <a href="https://mitpress.mit.edu/books/introduction-algorithms">CLRS</a>, so I think it’s necessary to mark them at here.</p><span id="more"></span><h2 id="Convert-Data-Structure-Operations-into-Math-problems"><a href="#Convert-Data-Structure-Operations-into-Math-problems" class="headerlink" title="Convert Data Structure Operations into Math problems"></a>Convert Data Structure Operations into Math problems</h2><p>In some simple questions, some calculations would be based on specific features that would be calculated. However, some of the features are predictable, so you can skip the cumbersome calculations to catch that feature. </p><h3 id="Example-count-the-odd-nunmber-in-range-Leetcode-1523"><a href="#Example-count-the-odd-nunmber-in-range-Leetcode-1523" class="headerlink" title="Example: count the odd nunmber in range (Leetcode 1523)"></a>Example: count the odd nunmber in range (Leetcode 1523)</h3><p>For a given range, if you want to count the odds, the most natural method would be calculate them out based on feature. However, since the appearance of odds is predictable, the question can be simplified by mapping the inputs and outputs. There are four cases:</p><ul><li>odd : odd<br>  inter &#x2F; 2 + 1</li><li>odd : eve<br>  inter &#x2F;2 + 1</li><li>eve : odd<br>  inter &#x2F;2 + 1</li><li>eve : eve<br>  inter &#x2F; 2<br>Code snippet would like this:</li></ul><div class="code-wrapper"><pre class="language-C++" data-language="C++"><code class="language-C++">class Solution &#123;public:    int countOdds(int low, int high) &#123;               if (low % 2 &#x3D;&#x3D; 0 &amp;&amp; high % 2 &#x3D;&#x3D; 0) &#123;            return (high - low) &#x2F; 2;        &#125;        else &#123;            return (high - low) &#x2F; 2 + 1;        &#125;    &#125;&#125;;</code></pre></div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithms</tag>
+      
+      <tag>Coding Basic</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ski Trip Winter 2022</title>
+    <link href="/02/01/2022/Ski-Trip-Winter-2022/"/>
+    <url>/02/01/2022/Ski-Trip-Winter-2022/</url>
+    
+    <content type="html"><![CDATA[<img src="/02/01/2022/Ski-Trip-Winter-2022/Helmet.jpg" class=""><p>This time, me and friends on the mountain ….</p><span id="more"></span><p>I used to ski in my 10s, where I went to a small artificial resort with my father. Never have I been brave enough to challenge any slope, even the greens. So for me, it still feels like my first time on snow.</p><p>Our trip visited serval stops. Flying from Houston to Denver was not expensive, even in the snow season. Arrived Denver in the afternoon, it took us two hour to line up in the tourists and pick up our rental car. After a short stand in the Denver City, we launched our snow season firstly at <a href="https://www.nps.gov/romo/index.htm">Rocky Mountain National Park</a>. </p><h2 id="National-Park-under-Snow"><a href="#National-Park-under-Snow" class="headerlink" title="National Park under Snow"></a>National Park under Snow</h2><p>We were lucky to be able to visit the national park right after they cleaned out the snow. After 2 hours driving from Deven city, we finally reached our first stop. The national park loaced in a valley between snowy peaks. The snow perfectly enhnaced the beauty of blue sky, with trees decorated the mountains to make them not so concise on looks. </p><img src="/02/01/2022/Ski-Trip-Winter-2022/Rookie.jpg" class=""><h2 id="Ski-Town-among-Mountains"><a href="#Ski-Town-among-Mountains" class="headerlink" title="Ski Town among Mountains"></a>Ski Town among Mountains</h2><div class="bvideo">    <a href="//www.bilibili.com/video/BV1dS4y1j7XW" target="_blank">        <div class="bvideo-box">            <div class="bvideo-cover">                <div class="cover-default"></div>                <div class="bvideo-cover-layer" style="background-image:url(https://images.weserv.nl/?url=http://i1.hdslb.com/bfs/archive/02ce532c2ce979bd887362687e5bbd161c8a767a.jpg)">                    <i class="icon-video"></i>                </div>                <span class="duration">00:02:14</span>            </div>            <div class="bvideo-info">                <p class="title">旅途的路上 - 被冰封的Frisco Bay</p>                <p class="card-status">                    <span class="play-num">                        <i class="fa fa-youtube-play"></i>                        <span>50</span></span>                    <span>                        <i class="fa fa-list-alt"></i>                        <span>0</span></span></p>                <div class="partition">                    <label class="card-label">视频</label>                    <label class="up-label"></label>                    <label class="up-name">PTJohn</label>                </div>                <div class="actions hide"></div>            </div>        </div>    </a></div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Trip</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Photography</tag>
+      
+      <tag>Airal Phtography</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Distributed Study Note - Evolving System</title>
+    <link href="/09/10/2021/Distributed-Study-Note/"/>
+    <url>/09/10/2021/Distributed-Study-Note/</url>
+    
+    <content type="html"><![CDATA[<img src="/09/10/2021/Distributed-Study-Note/Network_Switch.jpg" class=""><p>Principles of distributed systems has been widely adopted for decades. </p><span id="more"></span><h2 id="1-Multi-thread-Client-Server-System"><a href="#1-Multi-thread-Client-Server-System" class="headerlink" title="1. Multi-thread Client-Server System"></a>1. Multi-thread Client-Server System</h2><h2 id="2-Request-Reply-based-gRPC-System"><a href="#2-Request-Reply-based-gRPC-System" class="headerlink" title="2. Request-Reply based gRPC System"></a>2. Request-Reply based gRPC System</h2><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Distributed Syetm</tag>
+      
+      <tag>Network</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Some Rare Syntax in C++</title>
+    <link href="/07/07/2021/Syntax-explaination-C/"/>
+    <url>/07/07/2021/Syntax-explaination-C/</url>
+    
+    <content type="html"><![CDATA[<img src="/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg" class=""><p>Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented Stroage(OSS) service. While reading the code we have right now, I noticed some syntax and features in C++ that I’ve never met before.</p><span id="more"></span><h2 id="1-cc-files"><a href="#1-cc-files" class="headerlink" title="1. .cc files"></a>1. .cc files</h2><p>In general, .cc is a special suffix preferred by Unix world. The suffix in fact represent a C++ file, just like .cpp or older version, .C. However, to prevent confusion in the compiling, especially when C files and C++ files are exist in the same project, the header files of .cc files have to go with a .hh suffix. If .cpp is used, the header files can have .hh suffix or .hpp suffix. There are also other suffixes that represent their unique file type and usage, like .CUDA or .inl. </p><h2 id="2-enum-type"><a href="#2-enum-type" class="headerlink" title="2. enum type"></a>2. enum type</h2><p>enum is an unique data type that strictly connects values and their explicit names. </p><h2 id="3-shared-ptr"><a href="#3-shared-ptr" class="headerlink" title="3. shared_ptr"></a>3. shared_ptr</h2><h2 id="4-virtual-objects"><a href="#4-virtual-objects" class="headerlink" title="4. virtual objects"></a>4. virtual objects</h2><h2 id="5-std-wstring"><a href="#5-std-wstring" class="headerlink" title="5. std::wstring"></a>5. std::wstring</h2><h2 id="6-ByteBuffer"><a href="#6-ByteBuffer" class="headerlink" title="6. ByteBuffer"></a>6. ByteBuffer</h2><h2 id="7-x3D-amp"><a href="#7-x3D-amp" class="headerlink" title="7. [&#x3D;], [&amp;]"></a>7. [&#x3D;], [&amp;]</h2><h2 id="8-auto-type"><a href="#8-auto-type" class="headerlink" title="8. auto type"></a>8. auto type</h2><p>Project is long, working in progress…</p><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Coding Basic</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Teach your Computer to Drive</title>
+    <link href="/04/10/2021/Self-Driving-Algorithm-Trained-with-Reinforcement-Learning/"/>
+    <url>/04/10/2021/Self-Driving-Algorithm-Trained-with-Reinforcement-Learning/</url>
+    
+    <content type="html"><![CDATA[<img src="/04/10/2021/Self-Driving-Algorithm-Trained-with-Reinforcement-Learning/Driving.jpg" class=""><p>Every one at their 16 or 18 (depends on where you live) would suffer from the process to get the driver’s licenses. One good news is that, with the simulation tools and your coding skills, nowadays you can tutor your computer to be a driver that can take you everywhere, once it’s legal. </p><span id="more"></span><p>To train a non-biological intellegence, instead using a car, we can used a powerfull tool, Carla, to train an electronic brain with our specific way of reinforcement learning. </p><p>Carla is a python-based self-driving simulation software powered by Mathworks. This simulator can provide realistic virtual simulation environments for self-driving scripts. Features like fraction rate of the road, weather or even the traffic condition or traffic manipulation are available to adjust to precise simulation. In this project, Carla will be used to testify the adaptability of the L4 self-driving algorithm under varied working environments, and a self-build reinforcement module would be built and trained in the Carla virtual environment.</p><div class="code-wrapper"><pre class="language-none"><code class="language-none">Prerequisites: Carla simulator, Python verison &gt;&#x3D; 3.6</code></pre></div><p>Project is long, working in progress…</p><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Self Driving</tag>
+      
+      <tag>Machine Learning</tag>
+      
+      <tag>Simulation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Snow in the Hottest State of America</title>
+    <link href="/02/22/2021/Snow-in-the-Hotest-State-of-America/"/>
+    <url>/02/22/2021/Snow-in-the-Hotest-State-of-America/</url>
+    
+    <content type="html"><![CDATA[<img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/Academic_Building.jpg" class=""><p>This is the second snow this year in Texas. The ecstasy to see this unique weather in one of the hottest states of the United States now consolidates to the embrassment of electric, water supper and internet cutoff. School was canceled, and there an’t much thing to do (can do), all I left is my camera and drone. </p><span id="more"></span><p>Usually in texas , winter looks like this:</p><p>Now, after the rubbery of snow in two consecutive months, the campus of Texas A&amp;M University now is burried under the snow. </p><img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/12th_Man.jpg" class=""><img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/River.jpg" class=""><img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/Big_Tree.jpg" class=""><p>There are no better expression of these scenes than an acient Chinese poem:</p><div class="code-wrapper"><pre class="language-none"><code class="language-none">雾凇沆砀，天与云、与山、与水，上下一白。                                                                                 ———— 【明】张岱</code></pre></div><p>The snow didn’t get off util 1 weeks later. The planned cancel of spring break was forced to be replaced with another winter break, but in northern states version. Before the snow still can form a scene, my drone helped me to keep this memory in digit.</p><img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/From_Sky.jpg" class=""><p>See you in next season!</p><img src="/02/22/2021/Snow-in-the-Hotest-State-of-America/Snowman.jpg" class=""><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Life</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Photography</tag>
+      
+      <tag>Airal Phtography</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Correct Method to Deploy your Hexo Website onto Github Pages</title>
+    <link href="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/"/>
+    <url>/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/</url>
+    
+    <content type="html"><![CDATA[<img src="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg" class=""><p>After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!</p><span id="more"></span><div class="code-wrapper"><pre class="language-none"><code class="language-none">Prerequisites: you website, your github repo, a solid internet connection</code></pre></div><p>The <a href="https://hexo.io/docs/">hexo document website</a> has a detailed instruction about what you should prepare, so I’ll leave the job to them. After your website is finished with all impelmentations you want, run the following command:</p><div class="code-wrapper"><pre class="language-none"><code class="language-none">$ npm install hexo-deployer-git -save</code></pre></div><p>This plugin would generate the correct form for your deploy to Github Page. Then open _config.yml of your website and make the following edit:</p><div class="code-wrapper"><pre class="language-yml" data-language="yml"><div class="caption"><span>snippet of _config.yml</span></div><code class="language-yml"># URLurl: https:&#x2F;&#x2F;username.github.io&#x2F;# Deploymentdeploy:  type: git  repo: https:&#x2F;&#x2F;github.com&#x2F;&lt;username&gt;&#x2F;&lt;reponame&gt;.git  branch: master</code></pre></div><p>This would set up the link to your repo, so you don’t have to wake up Git(which makes a lot trouble if you use SSH connection on Windows).</p><p>Then you are one step before deployment. Simply run: </p><div class="code-wrapper"><pre class="language-none"><code class="language-none">$ hexo clean$ hexo generate$ hexo deploy</code></pre></div><p>to generate the correct website and push them into your repo. Then your website should be available on <a href="https://username.github.io/">https://username.github.io/</a>.</p><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Web Development</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>

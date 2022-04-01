@@ -1,429 +1,266 @@
+
+
 <!DOCTYPE html>
-
-<html lang="en">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        hexo-theme-suka © SukkaW
-        GitHub: https://github.com/SukkaW/hexo-theme-suka
-    -->
-
-    <!-- ### Resource Hint ### -->
-
-    <!-- ## DNS Prefetch ## -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-<!-- busuanzi -->
-
-    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
-
-
-<!-- comment -->
+<html lang="en" data-default-color-scheme=auto>
 
 
 
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#adb5bd">
+  <meta name="author" content="PTJohn0122">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Some Rare Syntax in C++">
+<meta property="og:url" content="https://xjhao.studio/07/07/2021/Syntax-explaination-C/index.html">
+<meta property="og:site_name" content="XJ Studio">
+<meta property="og:description" content="Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://xjhao.studio/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg">
+<meta property="article:published_time" content="2021-07-07T20:42:37.000Z">
+<meta property="article:modified_time" content="2021-12-22T04:38:32.000Z">
+<meta property="article:author" content="PTJohn0122">
+<meta property="article:tag" content="Coding Basic">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://xjhao.studio/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg">
+  
+  
+  <title>Some Rare Syntax in C++ - XJ Studio</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-    <link rel="dns-prefetch" href="//cdn-city.livere.com">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-
-
-<!-- analytics -->
-
-
-
-
-
-
-
-    <!-- ## Preload ## -->
+  
     
-    <!-- Busuanzi -->
     
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
-
-
-
-
-
-
-
-    <!-- ### Meta & Title & Info ### -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-    <meta name="renderer" content="webkit">
-
-    <!-- Title -->
-    <title>Some Rare Syntax in C++ | XJ Studio</title>
-
-    <!-- Favicons -->
-    <link rel="icon" type="image&#x2F;ico" href="/img/favicon.png"><meta name="theme-color" content="Cream">
-
-    <!-- ### Import File ### -->
-    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
-    body {
-        background-color: Cream;
-    }
-
-    a, a:visited {
-        color: Orange;
-    }
-
-    a:active, a:focus, a:hover {
-        color: Orange;
-        opacity: .75;
-    }
-
-    #post-content a,
-    #post-content a:hover,
-    #post-content a:focus,
-    #post-content a:visited {
-        color: Orange;
-        opacity: 1;
-    }
-
-    
-
-    .post-entry .card-body a {
-        color: Blue Gray;
-    }
-
-    .avatar {
-        background: Blue Gray;
-    }
-
-    .navbar-link,
-    .navbar-link:visited,
-    .timeline .timeline-item .timeline-icon.icon-lg {
-        color: Blue Gray;
-    }
-
-    .navbar-link:hover {
-        color: Blue Gray;
-        opacity: .8;
-    }
-
-    #search-input .btn,
-    #disqus_click_btn,
-    #disqus-switch-to-direct,
-    #disqus-loadmore-button {
-        background: Blue Gray;
-        border-color: Blue Gray;
-        color: #fff;
-    }
-
-    #post-toc a.post-toc-link,
-    #post-toc a.post-toc-link:visited,
-    .share-menu.menu .menu-item>a {
-        color: Blue Gray;
-    }
-
-    .share-menu.menu .menu-item>a:hover,
-    .share-menu.menu .menu-item>a:focus,
-    .share-menu.menu .menu-item>a:visited {
-        color: #50596c;
-        background: Cream;
-        opacity: .85;
-    }
-</style><link rel="stylesheet" href="/css/style.min.css">
-
-
-
-
-
-
-
-
-    <!-- Prettify Theme -->
-    
-    <link rel="preload" href="/css/highlight/gruvbox-dark.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/gruvbox-dark.min.css"></noscript>
-
-
-
-
-
-<script>
-/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
-</script>
-
-    <!-- ### Site Verification ### -->
-    
-
-
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="XJ Studio"><meta name="msapplication-starturl" content="https://xjhao.studio"><meta name="msapplication-navbutton-color" content="Cream"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="XJ Studio"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Some Rare Syntax in C++ | XJ Studio"><meta property="og:site_name" content="XJ Studio"><meta property="og:type" content="article"><meta property="og:url" content="https://xjhao.studio/07/07/2021/Syntax-explaination-C/"><meta property="og:locale" content="en"><meta name="description" content="Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented S - PTJohn0122 - XJ Studio"><meta name="keywords" content="Coding Basic"><meta property="og:image" content="https://xjhao.studio/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg"><meta property="article:published_time" content="2021-07-07T20:42:37.000Z"><meta property="article:modified_time" content="2021-12-22T04:38:32.000Z"><meta property="og:updated_time" content="2021-12-22T04:38:32.000Z"><meta property="article:author" content="PTJohn0122"><meta property="article:tag" content="Coding Basic"><meta name="twitter:card" content="summary">
-
-    
-
-    <!-- ### Canonical link ### -->
-    <link rel="canonical" href="https://xjhao.studio/07/07/2021/Syntax-explaination-C/">
-
-    <meta name="generator" content="Hexo 6.1.0">
-
-    <!-- ### Analytics ### -->
-    
-
-
-
-
-
-
-
-    <!-- ### Structured Data ### -->
-    
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "url": "https://xjhao.studio/07/07/2021/Syntax-explaination-C/",
-    "@type": "BlogPosting",
-    "logo": "https://xjhao.studio/img/favicon.png",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://xjhao.studio/07/07/2021/Syntax-explaination-C/"
-    },
-    "headline": "Some Rare Syntax in C++ | XJ Studio",
-    
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://xjhao.studio/img/favicon.png"
-    },
-    
-    "datePublished": "2021-07-07T20:42:37.000Z",
-    "dateModified": "2021-12-22T04:38:32.000Z",
-    "author": {
-        "@type": "Person",
-        "name": "PTJohn0122",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://xjhao.studio/img/WhiteDog.jpg"
-        },
-        "description": "Blackbird on my shoulder"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "XJ Studio",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://xjhao.studio/img/favicon.png"
-        }
-    },
-    
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://xjhao.studio/search?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-    },
-    
-    "keywords": "Coding Basic",
-    "description": "Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented S - PTJohn0122 - XJ Studio"
-}
-</script>
-
-
-
-    <!-- ### Custom Head ### -->
-    
-<!-- hexo injector head_end start --><style type="text/css">span[class="simple-icon"]{width:1.2rem;height:1.2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --></head>
-
-    <body>
-            
-
-            <!-- ### Main content ### -->
-            <!-- ## Header ##-->
-<header>
-    <h1 class="header-title text-center"><a href="/">XJ Studio</a></h1>
-
-    <p class="text-center header-slogan">
+      
+      
         
-            
-                Blackbird on my shoulder
-            
+          
         
-    </p>
-
-    <nav class="navbar-section text-center">
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
-        <a href="/" class="navbar-link">Home</a>
-    
-    
-        <a href="/archives/" class="navbar-link">Archives</a>
-    
-    
-    
-        <a href="/tags/" class="navbar-link">Tags Cloud</a>
-    
-        <a href="/about/" class="navbar-link">About</a>
-    
-        <a href="/friends/" class="navbar-link">Friends</a>
-    
-    
-        <div class="dropdown dropdown-right">
-    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
-    <ul class="menu share-menu">
+  
 
-        <!-- Share Weibo -->
-        
-        <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=XJ Studio&url=https://xjhao.studio&pic=https://xjhao.studio/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
-        </li>
-        
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
-        <!-- Share Twitter -->
-        
-        <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=XJ Studio&url=https://xjhao.studio&via=PTJohn0122" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
-        </li>
-        
 
-        <!-- Share Facebook -->
-        
-        <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://xjhao.studio" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
-        </li>
-        
+<!-- 主题依赖的图标库，不要自行修改 -->
 
-        <!-- Share Google+ -->
-        
-        <li class="menu-item">
-            <a href="https://plus.google.com/share?url=https://xjhao.studio" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
-        </li>
-        
-
-        <!-- Share LinkedIn -->
-        
-        <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xjhao.studio&title=Some Rare Syntax in C++" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
-        </li>
-        
-
-        <!-- Share QQ -->
-        
-
-        <!-- Share Telegram -->
-        
-
-        <!-- QRCode -->
-        
-        <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB10lEQVR42u3awbaCMAyEYd7/pXXrUZKZIIt2+Nl4D3LLt4htk/R4LXgdoECBAnWCOprr9B+b77/vfT7nvAdUDqp6eRmQXwNWfzvjgcpFnb3ICd4K+xPE4j2gnoWqXqIQajxQoH4GKQJZfQ/qGahqoTxbYKuFWE26t+0SQC2P6ibCOz9vy2ZALY2SRQcj4LvnugTkctUF1NKoLhBVQuAmCupZUHmoM4BaZJ0NXjeuNaOD2hrlLqzVxOoC28kYVASqK4R1BdYK2QW4nHBBxaDcxbVNJEXhVTWbQOWg3EaPU0xTC3jXKACVhXKTBBXUqmGpAh5ULqo7/OBMoNPmEqhclGpa/wOxCm+gYlAqiXAKHKpBMJ48QW2LcgsVzoEIt1hmFzhAbYm6sllzsaoAax0+BbUtqksU3EMQk4V6lCGDikB199wAdoq4oPJR0/uTQ6ddIgsqE+U2GcuNv2gMqKQXVB7KKWxNkgo1rv3rA7UVyj0o2AWzKpQ5DShQOSjnoPEkOVW4drIGFYNyJ0h1YMcqjHULOqgolLPhd4sblxd6UI9CuYUL2Wi8oxALKgLlbPAUTB5eBRWFchMG1aycJKegclFOEUI1fSaNAasQC2pb1EoXKFCgQH1cb0BukSAYWS/1AAAAAElFTkSuQmCC" alr="QRCode">
-        </li>
-        
-
-    </ul>
-</div>
-    
-    
-</nav>
-</header>
-
-            
-    <!-- ## Post ## -->
-    <div class="post-container">
-    <div id="post-card" class="card">
-        
-        <div class="card-item-container">
-            <div class="card-inner-cell">
-                <!-- # Post Header Info # -->
-                <div class="card-header">
-                    
-    <h1 class="card-title h3 mb-2">Some Rare Syntax in C++</h1>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
-<div class="post-header-info">
-    <p class="post-header-info-left text-gray">
-        <img class="author-thumb lazyload" data-src="/img/WhiteDog.jpg" src="/img/suka-lazyload.gif" alt="PTJohn0122's Avatar">
-        <span>07-07-2021</span>
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"xjhao.studio","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start --><style type="text/css">span[class="simple-icon"]{width:1.2rem;height:1.2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>XJ Studio</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-            <span class="suka-devide-dot"></span>
-            <a class="category-link" href="/categories/Coding/">Coding</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
         
         
-            <!-- Busuanzi Post Views -->
-<span id="busuanzi_container_page_pv" hidden>
-    <span class="suka-devide-dot"></span>
-    <span></span>
-    <span id="busuanzi_value_page_pv"></span>
-    <span>Views</span>
-</span>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
         
         
-    </p>
-    <div class="post-header-info-right">
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
         
-            <div class="dropdown dropdown-right">
-<a class="dropdown-toggle" tabindex="0">Share the post</a>
-<ul class="menu share-menu">
-    <!-- Share Weibo -->
-    
-    <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Some Rare Syntax in C++&url=https://xjhao.studio/07/07/2021/Syntax-explaination-C/&pic=https://xjhao.studio/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
-    </li>
-    
-
-    <!-- Share Twitter -->
-    
-    <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Some Rare Syntax in C++&url=https://xjhao.studio/07/07/2021/Syntax-explaination-C/&via=PTJohn0122" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
-    </li>
-    
-
-    <!-- Share Facebook -->
-    
-    <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://xjhao.studio/07/07/2021/Syntax-explaination-C/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
-    </li>
-    
-
-    <!-- Share Google+ -->
-    
-    <li class="menu-item">
-        <a href="https://plus.google.com/share?url=https://xjhao.studio/07/07/2021/Syntax-explaination-C/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
-    </li>
-    
-
-    <!-- Share LinkedIn -->
-    
-    <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xjhao.studio/07/07/2021/Syntax-explaination-C/&title=XJ Studio" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
-    </li>
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-
-    <!-- QRCode -->
-    
-    <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB10lEQVR42u3awbaCMAyEYd7/pXXrUZKZIIt2+Nl4D3LLt4htk/R4LXgdoECBAnWCOprr9B+b77/vfT7nvAdUDqp6eRmQXwNWfzvjgcpFnb3ICd4K+xPE4j2gnoWqXqIQajxQoH4GKQJZfQ/qGahqoTxbYKuFWE26t+0SQC2P6ibCOz9vy2ZALY2SRQcj4LvnugTkctUF1NKoLhBVQuAmCupZUHmoM4BaZJ0NXjeuNaOD2hrlLqzVxOoC28kYVASqK4R1BdYK2QW4nHBBxaDcxbVNJEXhVTWbQOWg3EaPU0xTC3jXKACVhXKTBBXUqmGpAh5ULqo7/OBMoNPmEqhclGpa/wOxCm+gYlAqiXAKHKpBMJ48QW2LcgsVzoEIt1hmFzhAbYm6sllzsaoAax0+BbUtqksU3EMQk4V6lCGDikB199wAdoq4oPJR0/uTQ6ddIgsqE+U2GcuNv2gMqKQXVB7KKWxNkgo1rv3rA7UVyj0o2AWzKpQ5DShQOSjnoPEkOVW4drIGFYNyJ0h1YMcqjHULOqgolLPhd4sblxd6UI9CuYUL2Wi8oxALKgLlbPAUTB5eBRWFchMG1aycJKegclFOEUI1fSaNAasQC2pb1EoXKFCgQH1cb0BukSAYWS/1AAAAAElFTkSuQmCC" alt="QRCode">
-    </li>
-    
-
-</ul>
-</div>
-        
+      </ul>
     </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/UnderWater.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Some Rare Syntax in C++">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-07 15:42" pubdate>
+        July 7, 2021 pm
+      </time>
+    </span>
+  
 </div>
-                </div>
-                <div class="card-body">
-                    
-                        
-                        
-                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-cc-files"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. .cc files</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-enum-type"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. enum type</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-shared-ptr"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. shared_ptr</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-virtual-objects"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. virtual objects</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-std-wstring"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. std::wstring</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-ByteBuffer"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. ByteBuffer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-x3D-amp"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. [&#x3D;], [&amp;]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-auto-type"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. auto type</span></a></li></ol></div>
-                        
-                    
-                    <article id="post-content">
-                        <img src="/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg" class="">
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      Words count 873 
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      Reading time 8 min
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Some Rare Syntax in C++</h1>
+            
+            <div class="markdown-body">
+              <img src="/07/07/2021/Syntax-explaination-C/Laptop_Coffee.jpg" srcset="/img/loading.gif" lazyload class="">
 
 <p>Recently I took my first formal job offer as a software engineer. As a first-time intern, they let me to start work from the simplest stuff, which was to implement the SDK for our Objective Oriented Stroage(OSS) service. While reading the code we have right now, I noticed some syntax and features in C++ that I’ve never met before.</p>
 <span id="more"></span>
@@ -432,187 +269,223 @@
 <h2 id="2-enum-type"><a href="#2-enum-type" class="headerlink" title="2. enum type"></a>2. enum type</h2><p>enum is an unique data type that strictly connects values and their explicit names. </p>
 <h2 id="3-shared-ptr"><a href="#3-shared-ptr" class="headerlink" title="3. shared_ptr"></a>3. shared_ptr</h2><h2 id="4-virtual-objects"><a href="#4-virtual-objects" class="headerlink" title="4. virtual objects"></a>4. virtual objects</h2><h2 id="5-std-wstring"><a href="#5-std-wstring" class="headerlink" title="5. std::wstring"></a>5. std::wstring</h2><h2 id="6-ByteBuffer"><a href="#6-ByteBuffer" class="headerlink" title="6. ByteBuffer"></a>6. ByteBuffer</h2><h2 id="7-x3D-amp"><a href="#7-x3D-amp" class="headerlink" title="7. [&#x3D;], [&amp;]"></a>7. [&#x3D;], [&amp;]</h2><h2 id="8-auto-type"><a href="#8-auto-type" class="headerlink" title="8. auto type"></a>8. auto type</h2><p>Project is long, working in progress…</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
-                    </article>
-                    
-
-
-    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
-    <script>
-    (function() {
-        var dateUpdate = Date.parse("2021-12-21");
-        var nowDate = new Date();
-        var a = nowDate.getTime();
-        var b = a - dateUpdate;
-        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
-        if (daysUpdateExpire >= 120) {
-            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
-        } else {
-            document.getElementById('date-expire-notification').style.display = 'none';
-        }
-    })();
-    </script>
-
-
-<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2021-07-07T20:42:37.000Z" itemprop="datePublished">07-07-2021</time>
-
-    , Updated at&nbsp;<time datetime="2021-12-22T04:38:32.000Z" itemprop="dateModified">12-21-2021</time>
-
-</p>
-<p class="post-footer-info mb-0 pt-2">
-
-<span class="post-categories-list mt-2">
-
-<a class="post-categories-list-item" href='/categories/Coding/'>Coding</a>
-
-</span>
-
-
-
-<span class="post-tags-list mt-2">
-
-<a class="post-tags-list-item" href="/tags/Coding-Basic/" rel="tag">#&nbsp;Coding Basic</a>
-
-</span>
-
-
-</p>
-
-                </div>
-                <div class="post-nav px-2 bg-gray">
-<ul class="pagination">
-    <!-- Prev Nav -->
-    
-        <li class="page-item page-prev">
-            <a href="/09/10/2021/Distributed-Study-Note/" rel="prev">
-                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
-                <div class="page-item-subtitle">Distributed Study Note - Evolving System</div>
-            </a>
-        </li>
-    
-
-    <!-- Next Nav -->
-    
-        <li class="page-item page-next">
-            <a href="/04/10/2021/Self-Driving-Algorithm-Trained-with-Reinforcement-Learning/" rel="next">
-                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
-                <div class="page-item-subtitle">Teach your Computer to Drive</div>
-            </a>
-        </li>
-    
-</ul>
-</div>
-
-                
-                    <!-- # Comment # -->
-                    
-                        <div class="card-footer post-comment">
-                            <div id="lv-container" data-id="city" data-uid="MTAyMC81NTg1MS8zMjMxNQ==">
-    <script id="livere-comment-js">
-    (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-       if (typeof LivereTower === 'function') { return; }
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-       e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-    </script>
-</div>
-                        </div>
-                    
-                
             </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Coding/">Coding</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Coding-Basic/">Coding Basic</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/09/10/2021/Distributed-Study-Note/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Distributed Study Note - Evolving System</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/04/10/2021/Self-Driving-Algorithm-Trained-with-Reinforcement-Learning/">
+                        <span class="hidden-mobile">Teach your Computer to Drive</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81NTg1MS8zMjMxNQ==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
         </div>
+      </div>
     </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
-            <!-- ### Footer ### -->
-            <footer class="text-center">
-    <!-- footer copyright -->
+      </div>
     
-        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="https://xjhao.studio">XJ Studio</a>
-        </p>
+  </div>
+</div>
 
-    <!-- footer custom text -->
-    <p class="footer-text mb-0">
-    Photo in posts are selected from my own work and Pexel
-    </p>
-    <!-- footer develop info -->
-    <p class="footer-develop mb-0">
-        
-    <!-- Busuanzi User Views -->
-    <span id="busuanzi_container_site_uv" hidden>
-        <span></span>
-        <span id="busuanzi_value_site_uv"></span>
-        <span>Viewers</span>
-        
-            <span>|</span>
-        
-    </span>
+<!-- Custom -->
 
 
-    <!-- Busuanzi Post Views -->
-    <span id="busuanzi_container_site_pv" hidden>
-        <span></span>
-        <span id="busuanzi_value_site_pv"></span>
-        <span>Views</span>
-        
-    </span>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
 
-        
-        Powered by&nbsp;<!--
-         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
-         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
-    </p>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
 </footer>
 
 
-        <!-- ### Import File ### -->
-        <!-- ### Footer JS Import ### -->
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
-<script>
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
     
-window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 50
-};
-
-(function() {
-    var copyrightNow = new Date().getFullYear();
-    var copyrightContent = document.getElementById('copyright-year');
-    var copyrightSince = 2020;
-    if (copyrightSince === copyrightNow) {
-        copyrightContent.textContent = copyrightNow;
-    } else {
-        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
-    }
-})();
-console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
-
-</script>
-
-<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+  
 
 
-<!-- Offset -->
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
-<!-- Comment -->
-
-    
-        
-    
 
 
-<!-- ### Custom Footer ### -->
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
 
-    </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
 </html>
