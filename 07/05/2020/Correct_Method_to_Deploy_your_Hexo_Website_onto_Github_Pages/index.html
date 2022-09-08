@@ -1,510 +1,236 @@
-
-
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="PTJohn0122">
+
+
+    <meta name="subtitle" content="It's Xingjian Hao's Personal Blog">
 
 
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#001219">
-  <meta name="author" content="PTJohn0122">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Correct Method to Deploy your Hexo Website onto Github Pages">
-<meta property="og:url" content="https://xjhao.studio/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/index.html">
-<meta property="og:site_name" content="XJ Studio">
-<meta property="og:description" content="After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://xjhao.studio/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg">
-<meta property="article:published_time" content="2020-07-05T05:51:06.000Z">
-<meta property="article:modified_time" content="2021-12-11T05:02:02.000Z">
-<meta property="article:author" content="PTJohn0122">
-<meta property="article:tag" content="Web Development">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://xjhao.studio/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg">
-  
-  
-  <title>Correct Method to Deploy your Hexo Website onto Github Pages - XJ Studio</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
+<title>Correct Method to Deploy your Hexo Website onto Github Pages | XJ Studio</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
     
+    <link rel="stylesheet" href="/css/style.css">
     
-      
-      
-        
-          
-        
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" />
-      
-      
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
-      
+
+
+
+
+    <!-- scripts list from _config.yml -->
     
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+    <script src="/js/frame.js"></script>
+    
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"xjhao.studio","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<!-- hexo injector head_end start --><style type="text/css">span[class="simple-icon"]{width:1.2rem;height:1.2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
 
 
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>XJ Studio</strong>
-    </a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+  <!-- hexo injector head_end start --><style type="text/css">span[class="simple-icon"]{width:1.2rem;height:1.2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Xingjian&#39;s Studio.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/tag/">Tag</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/about/">About</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/collections/">Reading List</a>
+              </li> 
+                   
           
           
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                Home
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                Archives
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                Categories
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                Tags
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                About
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                Links
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
+        </ul>
+      </nav>
     </div>
   </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/UnderWater.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Correct Method to Deploy your Hexo Website onto Github Pages">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-07-05 00:51" pubdate>
-        July 5, 2020 am
-      </time>
-    </span>
-  
 </div>
 
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      Words count 1k 
-    </span>
-  
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
 
   
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      Reading time 9 min
-    </span>
-  
-
-  
-  
-</div>
-
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
             
-          </div>
-
-          
+                
+                    <span class="post-tag">
+                        <a href="/tags/Web-Development/">
+                            Web Development
+                        </a>
+                    </span>    
+                           
+            
         </div>
-      </div>
+        <div class="post-title">
+            
+            
+                Correct Method to Deploy your Hexo Website onto Github Pages
+            
+            
+        </div>
+        <span class="post-date">
+            Jul 5, 2020
+        </span>
     </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Correct Method to Deploy your Hexo Website onto Github Pages</h1>
-            
-              <p class="note note-info">
-                
-                  Last Upate：4 months ago
-                
-              </p>
-            
-            <div class="markdown-body">
-              <img src="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg" srcset="/img/loading.gif" lazyload class="">
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <img src="/07/05/2020/Correct_Method_to_Deploy_your_Hexo_Website_onto_Github_Pages/Sunset_Stream.jpg" class="">
 
 <p>After weeks of massing around with web platforms, I finally figured out the correct method to deploy my Hexo website onto Github Pages. It’s not hard and not complicated. Follow up!</p>
 <span id="more"></span>
 
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">Prerequisites: you website, your github repo, a solid internet connection</code></pre></div>
+<pre><code class="highlight plaintext">Prerequisites: you website, your github repo, a solid internet connection</code></pre>
 
 <p>The <a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo document website</a> has a detailed instruction about what you should prepare, so I’ll leave the job to them. After your website is finished with all impelmentations you want, run the following command:</p>
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">$ npm install hexo-deployer-git -save</code></pre></div>
+<pre><code class="highlight plaintext">$ npm install hexo-deployer-git -save</code></pre>
 
 <p>This plugin would generate the correct form for your deploy to Github Page. Then open _config.yml of your website and make the following edit:</p>
-<div class="code-wrapper"><pre class="language-yml" data-language="yml"><div class="caption"><span>snippet of _config.yml</span></div><code class="language-yml"># URL
-url: https:&#x2F;&#x2F;username.github.io&#x2F;
+<pre><div class="caption"><span>snippet of _config.yml</span></div><code class="highlight yml"><span class="comment"># URL</span>
+<span class="attr">url:</span> <span class="string">https://username.github.io/</span>
 
-# Deployment
-deploy:
-  type: git
-  repo: https:&#x2F;&#x2F;github.com&#x2F;&lt;username&gt;&#x2F;&lt;reponame&gt;.git
-  branch: master</code></pre></div>
+<span class="comment"># Deployment</span>
+<span class="attr">deploy:</span>
+  <span class="attr">type:</span> <span class="string">git</span>
+  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;reponame&gt;.git</span>
+  <span class="attr">branch:</span> <span class="string">master</span></code></pre>
 
 <p>This would set up the link to your repo, so you don’t have to wake up Git(which makes a lot trouble if you use SSH connection on Windows).</p>
 <p>Then you are one step before deployment. Simply run: </p>
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">$ hexo clean
+<pre><code class="highlight plaintext">$ hexo clean
 $ hexo generate
-$ hexo deploy</code></pre></div>
+$ hexo deploy</code></pre>
 
 <p>to generate the correct website and push them into your repo. Then your website should be available on <a target="_blank" rel="noopener" href="https://username.github.io/">https://username.github.io/</a>.</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Coding/">Coding</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Web-Development/">Web Development</a>
-                    
-                  </div>
-                
-              </div>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/02/22/2021/Snow-in-the-Hotest-State-of-America/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Snow in the Hottest State of America</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                  </article>
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/09/10/2021/K8S_Study_Note/">Prev</a>
                 </div>
-              
-            </div>
-
             
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="lv-container" data-id="city" data-uid="MTAyMC81NTg1MS8zMjMxNQ==">
-    <script type="text/javascript">
-      Fluid.utils.loadComments('#lv-container', function() {
-        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
-      });
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
-
-
-              </article>
+        </div>
+        <div class="next-item">
             
-          </article>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Xingjian Hao | 
+            
+                
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
 </div>
-    
+
+    </div>
 
     
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
-  
-
-  
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
     
-  
 
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
-
-
-</body>
+  </body>
 </html>
