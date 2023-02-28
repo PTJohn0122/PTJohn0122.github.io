@@ -40,6 +40,8 @@
     
 
     
+    <meta property="algolia:search" data-application-id="SZ9TIQN7A7" data-api-key="099d4bc63f5676a8998b2068d942054f" data-index-name="personal_website">
+    
 
     
 
@@ -49,8 +51,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫥</text></svg>">
     
 
-    
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     
 
     
@@ -67,21 +67,11 @@
         window.isPost = false
         window.aomori = {
             
-            gitalk: {
-                enable: true,
-                clientID: "2c6c868b670f3fe4a495",
-                clientSecret: "82a71b4ecf17e231ebe927025f3526b02392652e",
-                repo: "https://github.com/PTJohn0122/PTJohn0122.github.io",
-                owner: "PTJohn0122",
-                admin: ["PTJohn0122",],
-                distractionFreeMode: true  // Facebook-like distraction free mode
-            },
-            
             
             
         }
         window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
+        window.aomori_search_algolia = true
 
     </script>
 
@@ -192,7 +182,7 @@
 <div class="about">
   
 <article
-id="about-clentn0qu0008ueb2acfv8j09"
+id="about-cleonyuen0000k8lx9su1dx62"
 class="article article-type-about"
 >
   <div class="article-inner">
@@ -221,15 +211,28 @@ class="article article-type-about"
 
 
 
+
+
+
+
+
+
 <section class="comments">
-    <div id="gitalk-container"></div>
+    <div class="giscus"></div>
 </section>
-
-
-
-
-
-
+<script src="https://giscus.app/client.js"
+    data-repo="PTJohn0122/PTJohn0122.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnk0MDYxNDMyNzg="
+    data-category="General"
+    data-category-id="DIC_kwDOGDVBLs4CUjk8"
+    data-mapping="title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-theme="light_tritanopia"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+</script>
 
 
 </div>
@@ -260,8 +263,6 @@ class="article article-type-about"
 
 <script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
 
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
