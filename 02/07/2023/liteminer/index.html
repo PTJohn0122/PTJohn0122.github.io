@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>liteminer | XJ Studio</title>
+    <title>liteminer - Your Crypto Mining Crew | XJ Studio</title>
 
     <meta name="description" content="&lt;p&gt; Many cryptocurrencies use a distributed consensus protocol to ensure security and authority. In this project I implemented a peer-to-peer networking and proof of work mechanism. In the case of cryptocurrencies, nodes are miners which may drop in and out of the network for various reasons: a miner may crash (or reboot), or a new miner may be added. These changes to the network happen in an unscheduled and unpredictable manner and special care must therefore be taken to ensure that no information is lost.&lt;/p&gt;">
     <meta name="keywords" content="">
@@ -17,14 +17,14 @@
 
     <meta property="og:locale" content="en" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content= "liteminer | XJ Studio"  />
+    <meta property="og:title" content= "liteminer - Your Crypto Mining Crew | XJ Studio"  />
     <meta property="og:description" content= "&lt;p&gt; Many cryptocurrencies use a distributed consensus protocol to ensure security and authority. In this project I implemented a peer-to-peer networking and proof of work mechanism. In the case of cryptocurrencies, nodes are miners which may drop in and out of the network for various reasons: a miner may crash (or reboot), or a new miner may be added. These changes to the network happen in an unscheduled and unpredictable manner and special care must therefore be taken to ensure that no information is lost.&lt;/p&gt;" />
     <meta property="og:url" content="https://xjhao.studio/02/07/2023/liteminer/index.html" />
     <meta property="og:site_name" content="" />
     <meta property="article:author" content="Xingjian Hao" />
     <meta property="article:publisher" content="" />
     <meta property="og:description" content="&lt;p&gt; Many cryptocurrencies use a distributed consensus protocol to ensure security and authority. In this project I implemented a peer-to-peer networking and proof of work mechanism. In the case of cryptocurrencies, nodes are miners which may drop in and out of the network for various reasons: a miner may crash (or reboot), or a new miner may be added. These changes to the network happen in an unscheduled and unpredictable manner and special care must therefore be taken to ensure that no information is lost.&lt;/p&gt;" />
-    <meta name="twitter:title" content="liteminer | XJ Studio"/>
+    <meta name="twitter:title" content="liteminer - Your Crypto Mining Crew | XJ Studio"/>
     <meta name="twitter:description" content="&lt;p&gt; Many cryptocurrencies use a distributed consensus protocol to ensure security and authority. In this project I implemented a peer-to-peer networking and proof of work mechanism. In the case of cryptocurrencies, nodes are miners which may drop in and out of the network for various reasons: a miner may crash (or reboot), or a new miner may be added. These changes to the network happen in an unscheduled and unpredictable manner and special care must therefore be taken to ensure that no information is lost.&lt;/p&gt;"/>
     <script type="application/ld+json">
         {
@@ -40,7 +40,7 @@
             },
             "name": "Xingjian Hao"
             },
-            "headline": "liteminer | XJ Studio",
+            "headline": "liteminer - Your Crypto Mining Crew | XJ Studio",
             "datePublished": "2023-02-07T21:04:00.000Z",
             "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -197,7 +197,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clenequu70007l3lx8au1aes6" class="article article-type-post" itemscope
+    <article id="post-clensza3f000gepb2c2kacbr7" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -213,7 +213,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      liteminer
+      liteminer - Your Crypto Mining Crew
     </h1>
   
 
@@ -266,13 +266,13 @@
 <h2 id="Proof-of-Work"><a href="#Proof-of-Work" class="headerlink" title="Proof of Work"></a>Proof of Work</h2><p>In cryptocurrencies like Bitcoin, blocks which contain a collection of transactions are constantly created and validated by network participants that perform a computationally intensive task. This is often referred to as proof of work. A common proof of work scheme involves finding a number referred to as a nonce that when concatenated to a string and hashed results in a new string that has a certain property. In Bitcoin, the proof of work entails finding the nonce that, when concatenated with the transaction data and hashed, results in a string that starts with a series of zeros. </p>
 <p>The fundamental insight is that doing the work to find such a nonce is computationally expensive and requires a lot of resources; therefore, in order to “cheat” the system, <a target="_blank" rel="noopener" href="https://www.coindesk.com/learn/what-is-a-51-attack/">one needs to have more resources than all other participants combined</a>. </p>
 <h2 id="Miner"><a href="#Miner" class="headerlink" title="Miner"></a>Miner</h2><p>In a cryptocurrency network, we refer to a miner as a worker that attempts to verify transactions by performing proof of work. Given a financial transaction encoded as a string M and an unsigned integer N, a miner will need to find the nonce between 0 and N, inclusive, that, when concatenated with M and hashed, results in the lowest hash value. </p>
-<h2 id="Pool"><a href="#Pool" class="headerlink" title="Pool"></a>Pool</h2><p>A pool is a collection of multiple miners and is responsible for distributing the work amongst its miners. It will also handle top-level logic and communications for a client. In this assignment, you will develop a pool and its corresponding miners with the following properties:</p>
+<h2 id="Pool"><a href="#Pool" class="headerlink" title="Pool"></a>Pool</h2><p>A pool is a collection of multiple miners and is responsible for distributing the work amongst its miners. It will also handle top-level logic and communications for a client. A pool and its corresponding miners have the following properties:</p>
 <ul>
 <li>The pool must take client requests and shard these requests (distribute the work) across all of its miners.</li>
 <li>The pool must keep track of the miners under its control and allow miners to come and go at will.</li>
 <li>The pool must aggregate miner responses and return the proof of work to the client.</li>
 </ul>
-<p>In a centralized system, this process can take a considerable amount of time. In a distributed system, you will be able to divide up the work, but you must take care when dealing with faulty miners (i.e., miners that drop in and out). Our pool takes a channel to marking the waiting mining tasks and to prevent the conflict of concurrent accessing by its FIFO characteristic. When a node is lost, the task will be return to the queue and wait for a new miner to grab. Only when all tasks in the channel are taken and all nonces are collect will the pool return a final proof-of-work. The miner will remain alive and waiting for the next mining task from the pool.</p>
+<p>In a centralized system, this process can take a considerable amount of time. In a distributed system, you will be able to divide up the work, but you must take care when dealing with faulty miners (i.e., miners that drop in and out). Our pool takes a channel to marking the waiting mining tasks and to prevent the conflict of concurrent accessing by its FIFO characteristic. When a node is lost, the task will be return to the queue and wait for a new miner to grab. Only when alsl tasks in the channel are taken and all nonces are collect will the pool return a final proof-of-work. The miner will remain alive and waiting for the next mining task from the pool.</p>
 
         </div>
 
@@ -287,7 +287,7 @@
     
   <div class="article-copyright hairline">
     <p>
-      本記事は  <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">「表示 - 非営利 - 改変禁止 4.0 国際 (CC BY-NC-ND 4.0)」</a> を採用。
+      本作品采用  <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。
     </p>
   </div>
   
@@ -298,7 +298,7 @@
 <nav class="article-nav">
   
     <a href="/02/25/2023/modist/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">prossimo</div>
+      <div class="article-nav-caption">下一篇</div>
       <div class="article-nav-title">
         
           Modist - a Safer Partitioning Option
@@ -308,25 +308,25 @@
   
   
     <a href="/12/13/2022/autoMIDI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
-      <div class="article-nav-title">autoMIDI</div>
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">autoMIDI - GAN based Jazz Music Generator</div>
     </a>
   
 </nav>
 
 
     <section class="share">
-        <div class="share-title">share</div>
+        <div class="share-title">分享</div>
         <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=liteminer - XJ Studio&url=https%3A%2F%2Fxjhao.studio%2F02%2F07%2F2023%2Fliteminer%2F">
+            href="https://twitter.com/share?text=liteminer - Your Crypto Mining Crew - XJ Studio&url=https%3A%2F%2Fxjhao.studio%2F02%2F07%2F2023%2Fliteminer%2F">
             <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=liteminer - XJ Studio&u=https%3A%2F%2Fxjhao.studio%2F02%2F07%2F2023%2Fliteminer%2F">
+            href="https://www.facebook.com/sharer.php?title=liteminer - Your Crypto Mining Crew - XJ Studio&u=https%3A%2F%2Fxjhao.studio%2F02%2F07%2F2023%2Fliteminer%2F">
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
         <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=liteminer - XJ Studio&url=https://xjhao.studio/02/07/2023/liteminer/&pic=">
+            href="https://service.weibo.com/share/share.php?title=liteminer - Your Crypto Mining Crew - XJ Studio&url=https://xjhao.studio/02/07/2023/liteminer/&pic=">
             <div class="n-icon n-icon-weibo"></div>
         </a> -->
     </section>
@@ -398,15 +398,19 @@
       <ul>
         
           <li>
+            <a href="/02/27/2023/chatGPT-UT/">Some thought on chatGPT</a>
+          </li>
+        
+          <li>
             <a href="/02/25/2023/modist/">Modist - a Safer Partitioning Option</a>
           </li>
         
           <li>
-            <a href="/02/07/2023/liteminer/">liteminer</a>
+            <a href="/02/07/2023/liteminer/">liteminer - Your Crypto Mining Crew</a>
           </li>
         
           <li>
-            <a href="/12/13/2022/autoMIDI/">autoMIDI</a>
+            <a href="/12/13/2022/autoMIDI/">autoMIDI - GAN based Jazz Music Generator</a>
           </li>
         
           <li>
