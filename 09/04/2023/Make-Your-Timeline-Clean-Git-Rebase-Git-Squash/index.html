@@ -191,7 +191,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clojwlje40003u2b2190xe2oq" class="article article-type-post" itemscope
+    <article id="post-clol5nk980003uab23pck418w" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -247,8 +247,12 @@
 <h1 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h1><p>Breiefly, <code>git rebase</code> is to move one or multiple commits after a specific point. It can help to resolve the conflicts while your current branch has un-pulled commits by others or prevent a PR that covered newly merged featrues with older version. <code>git squash</code> is a simple command that compress multiple commits into one. More details about those commads can be found <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/rebasing-of-branches-in-git/">here</a> and <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/git-squash/">here</a> on GeeksforGeeks.</p>
 <h1 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h1><p>To achieve the look in the above picture, some situations are worthwhile for an apply:</p>
 <h2 id="Git-Rebase-a-PR-that-fall-behind-serval-commits-on-main-branch"><a href="#Git-Rebase-a-PR-that-fall-behind-serval-commits-on-main-branch" class="headerlink" title="Git Rebase: a PR that fall behind serval commits on main branch"></a>Git Rebase: a PR that fall behind serval commits on main branch</h2><p>You can still making a PR with a outdated part of the repo. When PR is reviewed, only modifications contained in the commits of current branch will be highlighted, since the comparison is made with the split point version of repo. Merging without noticing the missing new features would cause a overwrite of old version to the new ones. Using <code>git rebase</code> in this case is similar with <code>git pull origin main</code> that the result timeline will be acceptable for the main branch.</p>
+<img src="/09/04/2023/Make-Your-Timeline-Clean-Git-Rebase-Git-Squash/git_rebase.png" class="" title="[pic 2: git rebase]">
+
 <p>If you are calling the command in terminal, it’s normal to see a coming up error message when you trying to push your update: <code>your local record is diverged from the remote</code>. Since you only rebased your local changes based on local record, the remote side would not be acknowlegded with this update, therefore reject the push. The simplist solution is to complete this rebase with GUI. For example, if your company has adopted the triangle of <code>confluence, jira, bitbucket</code>, you can easily find a rebase option on bitbucket PR. If not, you can still delete the remote branch and push your local as a new branch. </p>
 <h2 id="Git-Squash-multiple-unmerged-commits-that-tangling-with-pulls-from-main-branch"><a href="#Git-Squash-multiple-unmerged-commits-that-tangling-with-pulls-from-main-branch" class="headerlink" title="Git Squash: multiple unmerged commits that tangling with pulls from main branch"></a>Git Squash: multiple unmerged commits that tangling with pulls from main branch</h2><p>This is very simple to understand: if the commits are unmerged, the timeplie will have a line piece of the working branch that runs parallel with the main line, with multiple connections between. This makes the timeline hard to interpret. By compress multiple commits into one using <code>git squash</code>, the merged timeline will only have a small diverge of the new feature in developing branch, and the logic are simple as a linearization. </p>
+<img src="/09/04/2023/Make-Your-Timeline-Clean-Git-Rebase-Git-Squash/git_squash.png" class="" title="[pic 3: git suqash]">
+
 <p>However, <code>git squash</code> will also create a divergence between local and remote. The simplist solution is always delete the remote branch and push the local as a new one. After a PR is proposed, the branch cannot be deleted anymore util it merged into main, thus this move have to be make before the PR request. </p>
 
         </div>
