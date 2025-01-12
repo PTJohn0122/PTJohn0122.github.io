@@ -1,289 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="author" content="Xingjian Hao">
+
+
+    <meta name="subtitle" content="It's Xingjian Hao's Personal Website">
+
+
+
+
+<title>Xingjian Hao | Xingjian Hao</title>
+
+
+
+    <link rel="icon" href="/image/Moai.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
     
-    <title>About Me | XJ Studio</title>
-
-    <meta name="description" content="XJ Studio">
-    <meta name="keywords" content="">
-
-    
-
-
-
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="About Me"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:locale" content="en" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://xjhao.studio/about/index.html" />
-    <meta property="og:site_name" content="Xingjian Hao" />
-    <meta property="article:publisher" content="" />
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "About Me",
-            "description": "",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Xingjian Hao"
-            },
-        }
-    </script>
-
-
+    <link rel="stylesheet" href="/css/style.css">
     
 
+
+
+    <!-- scripts list from _config.yml -->
     
-    <meta property="algolia:search" data-application-id="SZ9TIQN7A7" data-api-key="099d4bc63f5676a8998b2068d942054f" data-index-name="personal_website">
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
     
 
-    
-
-    
-
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    
-
-    
-
-    
-
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
 
 
     
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+    
+        
+    
 
-
-    <script>
-        window.isPost = false
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = true
-
-    </script>
 
 <!-- hexo injector head_end start --><style type="text/css">span[class="simple-icon"]{width:1.2rem;height:1.2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
 
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
-            
-            <div class="header-type-inner">
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xingjian&#39;s Studio</a></div>
+            <div class="menu navbar-right">
                 
-                    <div id="typed-strings" style="display:none">
-                        <p>XJ Studio</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
+                    <a class="menu-item" href="/about">About</a>
                 
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tags">Tags</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
     
-                
-                    <span class="header-type-page-title">| About Me</span>
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/about">About</a>
-                
-                <a href="/collections">Collections</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-    <a class="social" target="_blank" href="https://github.com/PTJohn0122">
-        <ion-icon name="logo-github"></ion-icon>
-    </a>
-
-    <a class="social" target="_blank" href="https://www.linkedin.com/in/xingjianhao/">
-        <ion-icon name="logo-linkedin"></ion-icon>
-    </a>
-
-    <a class="social" target="_blank" href="https://app.joinhandshake.com/stu/users/42773248">
-        <ion-icon name="hand-left"></ion-icon>
-    </a>
-
-    <a class="social" target="_blank" href="mailto:xingjian_hao@brown.edu">
-        <ion-icon name="mail-outline"></ion-icon>
-    </a>
-
-    <a class="social" target="_blank" href="https://www.instagram.com/ptjohn_22/">
-        <ion-icon name="logo-instagram"></ion-icon>
-    </a>
-
-    <a class="social" target="_blank" href="https://open.spotify.com/user/21wxqrgrovxdcwvqxt7mttkly">
-        <ion-icon name="musical-notes-outline"></ion-icon>
-    </a>
-
-            </div>
-        </div>
-
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
-
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xingjian&#39;s Studio</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
                 </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/about">About</a>
-                    
-                    <a href="/collections">Collections</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
-                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tags">Tags</a>
+                
             </div>
         </div>
-    </div>
+    </nav>
 
-</div>
-
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    
-
-
-<div class="about">
-  
-<article
-id="about-clol5nk9a0008uab255203v4d"
-class="article article-type-about"
->
-  <div class="article-inner">
-      <div class="article-entry post-inner-html">
-          <h1 id="Hi-this-is-Xingjian…"><a href="#Hi-this-is-Xingjian…" class="headerlink" title="Hi, this is Xingjian…"></a>Hi, this is Xingjian…</h1><p><img src="/images/profile.jpg" alt="Profile"></p>
-<h2 id="Who-am-I"><a href="#Who-am-I" class="headerlink" title="Who am I"></a>Who am I</h2><p>Graduate Student at <a target="_blank" rel="noopener" href="https://engineering.brown.edu/">Brown University</a>. Born and raised in <a target="_blank" rel="noopener" href="https://en.wikivoyage.org/wiki/Jinan">Jinan, China</a>. Amateur guitarist, photographer, rock enthusiastic and more.</p>
-<h2 id="What-can-I-do"><a href="#What-can-I-do" class="headerlink" title="What can I do"></a>What can I do</h2><p>Some skill stacks I have…</p>
-<ul>
-<li>Programming Language (C++, Python, Go)</li>
-<li>Web Development (JavaScript, React, Vue, Node)</li>
-<li>Distributed System (k8s, ceph, rook, MapReduce)</li>
-<li>Cloud Service (AWS EC2, AWS S3)</li>
-<li>ML&#x2F;DL (Tensorflow, Pytorch, SciKit)</li>
-</ul>
-<h2 id="About-this-Website"><a href="#About-this-Website" class="headerlink" title="About this Website"></a>About this Website</h2><p>This website is build on <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> with theme <a target="_blank" rel="noopener" href="https://aomori.linhong.me/getting-started/intro">Aomori</a>. Comment system based on <a target="_blank" rel="noopener" href="https://giscus.app/">giscus</a>, and site-wise seraching based on <a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a>. Some of the cover pictures are collected from <a target="_blank" rel="noopener" href="https://www.pexels.com/">Pexels</a>, a copyright free photography website.</p>
-
-      </div>
-  </div>
-</article>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="comments">
-    <div class="giscus"></div>
-</section>
-<script src="https://giscus.app/client.js"
-    data-repo="PTJohn0122/PTJohn0122.github.io"
-    data-repo-id="MDEwOlJlcG9zaXRvcnk0MDYxNDMyNzg="
-    data-category="General"
-    data-category-id="DIC_kwDOGDVBLs4CUjk8"
-    data-mapping="title"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-theme="light_tritanopia"
-    data-lang="en"
-    crossorigin="anonymous"
-    async>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
 </script>
-
-
+            <div class="main">
+                <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title">Xingjian Hao</h2>
+        
+        <section class="post-content">
+            <h1 id="Hi-this-is-Xingjian…"><a href="#Hi-this-is-Xingjian…" class="headerlink" title="Hi, this is Xingjian…"></a>Hi, this is Xingjian…</h1><p><img src="/images/IMG_7801.jpg" alt="Profile"></p>
+<p>Not the bear.</p>
+<h2 id="My-Path"><a href="#My-Path" class="headerlink" title="My Path"></a>My Path</h2><h3 id="Brown-University"><a href="#Brown-University" class="headerlink" title="Brown University"></a>Brown University</h3><p><strong>Master of Science(ScM) in Electrical and Computer Engineering</strong><br>Research Assistant in ACT Lab<br>Teaching Assistant in Computer Science Department for CSCI 1420: Machine Learning</p>
+<h3 id="Texas-A-amp-M-University"><a href="#Texas-A-amp-M-University" class="headerlink" title="Texas A&amp;M University"></a>Texas A&amp;M University</h3><p><strong>Bachelor of Science in Computer Engineering</strong><br>Grand Challenge Scholar Program<br>Teaching Assistant in Electrical Engineering Department for ECEN 248: Digital Circuit Design<br>Research Assistant in 12th Unmanned Team for autonomous driving path planning<br>Embedded Engineer in Texas Amibot Robotics Group</p>
+<h2 id="Where-I-have-worked"><a href="#Where-I-have-worked" class="headerlink" title="Where I have worked"></a>Where I have worked</h2><h3 id="DJI-Technology-Co"><a href="#DJI-Technology-Co" class="headerlink" title="DJI Technology Co."></a>DJI Technology Co.</h3><p>Worked for 6 month as Software Engineer Intern. At DJI, I worked in ALAM team under Autonomous Driving BU for BEV map matching systems and its submodules. As a intern, my workday including the following tasks:</p>
+<ul>
+<li>Code review for module updates, following AUTOSAR coding standard(ISO26262).</li>
+<li>Monitor auto-launched testing results for all 9 modules, virtualize the success rate tenderline.</li>
+<li>Compile module artifacts using Jenkins and deploy&#x2F;integrate with current services.</li>
+</ul>
+<p>Besides thoses routines, I also established a testing platform for the team. The platform stores information for road-recorded test cases and stores their information for distinction. With these data entry, users can easily locate the testing case for their updates and launch automatic test after they off work. The platform will pull the artifact and test cases and execute the tesing in a isolated enviornment(container). The platform also use Kubernetes to orchestrate the containers. I also helped to update the vins navigation module, especially the ceres-solver for non-linear optimization.</p>
+<h3 id="Gridsum-Holding-Inc"><a href="#Gridsum-Holding-Inc" class="headerlink" title="Gridsum Holding Inc."></a>Gridsum Holding Inc.</h3><p>Worked for 3 month as Software Engineer Intern. At Gridsum, I served the feature updating for Saas Machine Learning Platform. I helped migrate old features to the new architecture, and designed a input data stake for machine learning operators. </p>
+<p>Another important part of my work is about front deployment. I was send to clients company as an application engineer&#x2F;tech consultant for 2 weeks. Work for application engineer includes intensive communication with both clients and developers from company, sometimes even include 3rd party contractors. I built strong professional communication skills within these two weeks, and my problem solving ability under sever circumstance is also nutured greatly. </p>
+<h3 id="Inspur-Group"><a href="#Inspur-Group" class="headerlink" title="Inspur Group"></a>Inspur Group</h3><p>Worked for 3 month as Software Engineer Intern. This is my first internship, where I learnt about how a team perform its functionality to produce top-nortch cloud services. Our team was responsible for the object oriented storage(OSS) platform. I helped the team to expanded the SDK and API in C++, Python and Java. In the last couple of weeks, I also helped to establish the lifecycle monitoring feature. </p>
+<h2 id="What-I-have-accompolished"><a href="#What-I-have-accompolished" class="headerlink" title="What I have accompolished"></a>What I have accompolished</h2><ul>
+<li><p><strong>1st Place</strong> in Overall Dynamics for 2021 SAE AutoDrive Challenge with Texas A&amp;M 12th Unmanned Team, sponsored by General Motors. </p>
+</li>
+<li><p><strong>3rd Place</strong> in 2019 Robomaster North American Regional with Texas Aimbot Robotics Team.</p>
+</li>
+</ul>
+<h2 id="What-I-can-do"><a href="#What-I-can-do" class="headerlink" title="What I can do"></a>What I can do</h2><ul>
+<li>Programming Language (C&#x2F;C++, Python, Go, Javascript&#x2F;Typescript)</li>
+<li>Web Development (React, Vue, Node.JS)</li>
+<li>Distributed System (Kubernetes, Ceph, Rook, MapReduce)</li>
+<li>Cloud Service (AWS EC2, AWS S3, Azure AKS)</li>
+<li>ML Framework (Tensorflow, Pytorch, SciKit)</li>
+<li>Embedded (CAN, UART, ROS)</li>
+</ul>
+<!-- ## About this Website
+This website is build on [Hexo](https://hexo.io/) with theme [Aomori](https://aomori.linhong.me/getting-started/intro). Comment system based on [giscus](https://giscus.app/), and site-wise seraching based on [Algolia](https://www.algolia.com/). Some of the cover pictures are collected from [Pexels](https://www.pexels.com/), a copyright free photography website. -->
+        </section>
+    </article>
 </div>
 
-
-                </section>
-            </section>
-
-            
-        </div>
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Xingjian Hao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
-
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            XJ Studio &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
-
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
-
-
-
-
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 </body>
 
 </html>
